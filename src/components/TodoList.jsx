@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 
-function TodoList({ todo }) {
-  return <h1>Hello</h1>;
+const TodoList = ({ todos, setTodos }) => {
+  return todos.map((todo) => (
+    <Todo
+      key={todo.id}
+      todos={todos}
+      task={todo.text}
+      status={todo.complete}
+      setTodo={setTodos}
+    />
+  ));
+};
 
-  //   return todo.map((todo) => {
-  //     return <Todo />;
-  //   });
-}
 export default TodoList;

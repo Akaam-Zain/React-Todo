@@ -8,7 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodos] = useState([]);
   const [input, setInput] = useState("");
   return (
     <div>
@@ -17,16 +17,18 @@ function App() {
           <Route exact path="/">
             <Login />
           </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
 
           <Route exact path="/todo">
             <Form
               todo={todo}
-              setTodo={setTodo}
+              setTodo={setTodos}
               input={input}
               setInput={setInput}
             />
-
-            <TodoList todo={todo} />
+            <TodoList todos={todo} setTodos={setTodos} />
           </Route>
         </Switch>
       </BrowserRouter>

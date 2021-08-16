@@ -34,7 +34,6 @@ const Form = ({ todo, setTodo, input, setInput }) => {
           placeholder="Add Task"
         />
         <button onClick={addTask}>Add Task</button>
-        <TodoList task={todo} />
       </form>
     </div>
   );
