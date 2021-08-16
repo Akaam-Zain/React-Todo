@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
 
-const Form = () => {
-  const [todo, setTodo] = useState([]);
-  const [input, setInput] = useState("");
-
+const Form = ({ todo, setTodo, input, setInput }) => {
   const inputTextHandler = (e) => {
     e.preventDefault();
 
