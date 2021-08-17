@@ -6,32 +6,35 @@ import Signup from "./components/Signup";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   const [todo, setTodos] = useState([]);
   const [input, setInput] = useState("");
   return (
     <div>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
+      <AuthProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
 
-          <Route exact path="/todo">
-            <Form
-              todo={todo}
-              setTodo={setTodos}
-              input={input}
-              setInput={setInput}
-            />
-            <TodoList todos={todo} setTodos={setTodos} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+            <Route exact path="/todo">
+              <Form
+                todo={todo}
+                setTodo={setTodos}
+                input={input}
+                setInput={setInput}
+              />
+              <TodoList todos={todo} setTodos={setTodos} />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
