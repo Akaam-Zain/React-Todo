@@ -7,8 +7,9 @@ const TodoList = ({ todos, setTodos }) => {
       key={todo.id}
       todos={todos}
       task={todo.text}
+      todo={todo}
       status={todo.complete}
-      setTodo={setTodos}
+      setTodos={setTodos}
     />
   ));
 };
