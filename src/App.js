@@ -3,6 +3,7 @@ import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 import Login from "./components/LogIn";
 import Signup from "./components/Signup";
+import AppBar from "./components/AppBar";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from "react";
@@ -24,6 +25,7 @@ function App() {
             </Route>
 
             <Route exact path="/todo">
+              <AppBar />
               <Form
                 todo={todo}
                 setTodo={setTodos}

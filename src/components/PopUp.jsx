@@ -6,10 +6,23 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { Edit } from "@material-ui/icons";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 
 export default function FormDialog({ todo, setTodos, todos }) {
   const [open, setOpen] = React.useState(false);
   const [input, setInput] = React.useState(false);
+
+  const useStyles = makeStyles({
+    // style rule
+    foo: (props) => ({
+      backgroundColor: props.backgroundColor,
+    }),
+    bar: {
+      // CSS property
+      color: (props) => props.color,
+    },
+  });
 
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -38,9 +51,19 @@ export default function FormDialog({ todo, setTodos, todos }) {
     );
   };
 
+  const props = { backgroundColor: "white", color: "black" };
+  // Pass the props as the first argument of useStyles()
+  const classes = useStyles(props);
+
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button
+        startIcon={<Edit />}
+        className={`${classes.foo} ${classes.bar}`}
+        variant="standard"
+        color="white"
+        onClick={handleClickOpen}
+      >
         Edit
       </Button>
       <Dialog
