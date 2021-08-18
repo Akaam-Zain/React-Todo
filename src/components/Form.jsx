@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import TodoList from "./TodoList";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import { Button, Container } from "@material-ui/core";
 
 const Form = ({ todo, setTodo, input, setInput }) => {

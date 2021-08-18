@@ -59,7 +59,7 @@ const Todo = ({ task, todos, todo, status, setTodos }) => {
       <Container className={classes.paper}>
         <Checkbox type="checkbox" onChange={completedTask} name="" id="" />
         {!todo.completed ? (
-          <div color="white">
+          <div>
             <h2
               style={{
                 marginRight: "100px",

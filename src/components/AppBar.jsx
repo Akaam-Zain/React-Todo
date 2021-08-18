@@ -6,9 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import { useAuth } from "../context/AuthContext";
-import { Link, useHistory } from "react-router-dom";
-import { Alert } from "@material-ui/lab";
-
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     background: "linear-gradient(45deg, #83eaf1 30%, #63a4ff 90%)",

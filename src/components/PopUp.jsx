@@ -4,10 +4,9 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { Edit } from "@material-ui/icons";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default function FormDialog({ todo, setTodos, todos }) {
   const [open, setOpen] = React.useState(false);
@@ -60,8 +59,6 @@ export default function FormDialog({ todo, setTodos, todos }) {
       <Button
         startIcon={<Edit />}
         className={`${classes.foo} ${classes.bar}`}
-        variant="standard"
-        color="white"
         onClick={handleClickOpen}
       >
         Edit
